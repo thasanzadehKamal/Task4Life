@@ -1,11 +1,10 @@
 let box = document.querySelectorAll('.box');
-
-window.addEventListener('scroll', checkBoxes);  
-
-function checkBoxes() {
-    boxes.forEach(box => {
-        if (box.getBoundingClientRect().top < window.innerHeight) {
+window.addEventListener('scroll', () => {
+    box.forEach(box => {
+        if(box.getBoundingClientRect().top < window.innerHeight){
             box.classList.add('show');
+        }else{
+            box.classList.remove('show');
         }
-    });
-}
+    })
+});
